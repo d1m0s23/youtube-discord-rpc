@@ -39,8 +39,8 @@ async function youtube() {
             updateRP(video,artist);
           }
       } else {
-          if (video !== "Idling") {
-            video = 'Idling';
+          if (video !== "Ничего не смотрит") {
+            video = 'Нету видоса';
             updateRP(video,null);
           }
       }
@@ -55,7 +55,7 @@ function updateRP(status,artist) {
     status = "Idling";
     return;
   }
-  if (artist == null) artist = "Watching";
+  if (artist == null) artist = "Смотрю";
   client.setActivity({
     details: artist,
     state: status,
@@ -66,7 +66,7 @@ function updateRP(status,artist) {
     console.log(err);
   });
   
-  console.log(`Status Updated: ${status}`);
+  console.log(`Status Updated: ${status}`); //
 }
 
 function isWin() {
