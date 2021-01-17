@@ -27,10 +27,10 @@ async function youtube() {
           if (title[0] !== video) {
             video = title[0].slice(0,-2);
             var splitEachChar = video.split('');
-            var count = getOccurrence(splitEachChar,'-'); // prevent it from splittin to much, certain youtubers loves to put "-" in title
+            var count = getOccurrence(splitEachChar,'-'); 
             if(count <= 1){
-            artist = video.split("-")[0]; //for music channels get artist
-            video = video.split("-")[1]; //and song name
+            artist = video.split("-")[0]; 
+            video = video.split("-")[1]; 
             }
             if(video == null) {
                 video = artist;
@@ -60,13 +60,14 @@ function updateRP(status,artist) {
     details: artist,
     state: status,
     largeImageKey: 'logo',
-    largeImageText: 'Youtube', //todo : make it show thumbnails & maybe a timer
+    largeImageText: 'Youtube',
+    type: 'WATCHING', 
     instance: false
   }).catch(err => {
     console.log(err);
   });
   
-  console.log(`Status Updated: ${status}`); //
+  console.log(`Status Updated: ${status}`); 
 }
 
 function isWin() {
